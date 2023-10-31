@@ -40,6 +40,7 @@
             this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.новаяИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.информацияОбИграхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBoxStatistics = new System.Windows.Forms.ToolStripTextBox();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.какИгратьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InputCommandsPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -48,6 +49,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonNextAttempt = new System.Windows.Forms.Button();
             this.buttonNewGame = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.bottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataviewGameInfo)).BeginInit();
             this.menuStrip.SuspendLayout();
@@ -162,9 +164,19 @@
             // 
             // информацияОбИграхToolStripMenuItem
             // 
+            this.информацияОбИграхToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBoxStatistics});
             this.информацияОбИграхToolStripMenuItem.Name = "информацияОбИграхToolStripMenuItem";
             this.информацияОбИграхToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.информацияОбИграхToolStripMenuItem.Text = "информация об играх";
+            // 
+            // toolStripTextBoxStatistics
+            // 
+            this.toolStripTextBoxStatistics.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBoxStatistics.Name = "toolStripTextBoxStatistics";
+            this.toolStripTextBoxStatistics.ReadOnly = true;
+            this.toolStripTextBoxStatistics.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBoxStatistics.Text = "11111";
             // 
             // помощьToolStripMenuItem
             // 
@@ -252,11 +264,20 @@
             this.buttonNewGame.Visible = false;
             this.buttonNewGame.Click += new System.EventHandler(this.buttonNewGame_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(147, 197);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(384, 91);
+            this.textBox1.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 333);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.InputCommandsPanel);
             this.Controls.Add(this.dataviewGameInfo);
             this.Controls.Add(this.bottomPanel);
@@ -301,6 +322,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cows;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonNewGame;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBoxStatistics;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

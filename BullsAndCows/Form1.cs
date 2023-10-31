@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace BullsAndCows
     public partial class Form1 : Form
     {
         ///<summary>искомая комбинация</summary>
-        public string SecretCombination { get; private set; }
+        public string SecretCombination { get; private set; } = "";
 
         /// <summary>Длина комбинации</summary>
         public const int CombinationLength = 4;
@@ -22,7 +23,12 @@ namespace BullsAndCows
         public int attempts = 0;
 
         /// <summary>системное время, при котором началась игра</summary>
-        private DateTime startTime;
+        private DateTime _startTime;
+
+        /// <summary>поле для хранения статистики</summary>
+        private Statistics _statistics = new Statistics();
+
+        string path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\", "statistics.json"));
 
         public Form1()
         {
@@ -45,7 +51,9 @@ namespace BullsAndCows
             }
             labelCongratulation.Text = SecretCombination;
 
-            startTime = DateTime.Now;
+            _startTime = DateTime.Now;
+
+            DownloadAndShowStatistics();
         }
 
         /// <summary>
@@ -66,6 +74,7 @@ namespace BullsAndCows
             if (bulls == CombinationLength)
             {
                 GameOverBottomInfo();
+                UploadStatistics();
 
                 MessageBox.Show("Ура! победа");
                 buttonNextAttempt.Enabled = false;
@@ -80,7 +89,7 @@ namespace BullsAndCows
         private void GameOverBottomInfo()
         {
             labelCongratulation.Text = $"Вы победили, используя {attempts} попытку(-ок)!";
-            TimeSpan timeSpan = DateTime.Now - startTime;
+            TimeSpan timeSpan = DateTime.Now - _startTime;
             labelTimespan.Text = $"{timeSpan.TotalSeconds:N1} c";
         }
 
@@ -100,6 +109,26 @@ namespace BullsAndCows
         private void buttonNewGame_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        /// <summary>загрузка и отображение статистики</summary>
+        private void DownloadAndShowStatistics()
+        {
+            _statistics.DeserializeJson(path);
+            if (_statistics.Container != null)
+            {
+                foreach (GameInfoContainer line in _statistics.Container)
+                {
+                    textBox1.Text += line.ToString() + "\r\n";
+                }
+            }
+        }
+
+        private void UploadStatistics()
+        {
+            GameInfoContainer gameInfo = new GameInfoContainer(attempts, int.Parse(SecretCombination));
+            _statistics.Container.Add(gameInfo);
+            _statistics.SerializeJson(path);
         }
 
         /// <summary>
