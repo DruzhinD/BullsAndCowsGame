@@ -35,6 +35,12 @@ namespace BullsAndCows
             InitializeComponent();
         }
 
+        //для перерисовки рамки формы
+        //protected override void OnPaint(PaintEventArgs e)
+        //{
+        //    ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.FromArgb(159, 86, 53), ButtonBorderStyle.Solid);
+        //}
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //генерация комбинации

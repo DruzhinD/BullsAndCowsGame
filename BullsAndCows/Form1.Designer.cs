@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.labelTimespan = new System.Windows.Forms.Label();
             this.labelCongratulation = new System.Windows.Forms.Label();
@@ -59,6 +63,7 @@
             // 
             // bottomPanel
             // 
+            this.bottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(113)))), ((int)(((byte)(105)))));
             this.bottomPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bottomPanel.Controls.Add(this.labelTimespan);
             this.bottomPanel.Controls.Add(this.labelCongratulation);
@@ -94,18 +99,51 @@
             // 
             // dataviewGameInfo
             // 
+            this.dataviewGameInfo.AllowUserToResizeColumns = false;
+            this.dataviewGameInfo.AllowUserToResizeRows = false;
             this.dataviewGameInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataviewGameInfo.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataviewGameInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(175)))), ((int)(((byte)(164)))));
+            this.dataviewGameInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataviewGameInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(52)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(91)))), ((int)(((byte)(61)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(52)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(91)))), ((int)(((byte)(61)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataviewGameInfo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataviewGameInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataviewGameInfo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.attempt,
             this.number,
             this.bulls,
             this.cows});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(109)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(158)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(75)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(133)))), ((int)(((byte)(113)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataviewGameInfo.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataviewGameInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataviewGameInfo.EnableHeadersVisualStyles = false;
             this.dataviewGameInfo.GridColor = System.Drawing.Color.DarkGray;
             this.dataviewGameInfo.Location = new System.Drawing.Point(0, 98);
             this.dataviewGameInfo.Name = "dataviewGameInfo";
+            this.dataviewGameInfo.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(109)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataviewGameInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataviewGameInfo.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(109)))), ((int)(((byte)(92)))));
+            this.dataviewGameInfo.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataviewGameInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataviewGameInfo.Size = new System.Drawing.Size(776, 196);
             this.dataviewGameInfo.TabIndex = 1;
@@ -136,7 +174,7 @@
             // 
             // menuStrip
             // 
-            this.menuStrip.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(114)))), ((int)(((byte)(70)))));
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.играToolStripMenuItem,
             this.помощьToolStripMenuItem});
@@ -195,6 +233,7 @@
             // 
             // InputCommandsPanel
             // 
+            this.InputCommandsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(157)))), ((int)(((byte)(125)))));
             this.InputCommandsPanel.ColumnCount = 3;
             this.InputCommandsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.InputCommandsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -213,20 +252,24 @@
             // textBoxInput
             // 
             this.textBoxInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxInput.Font = new System.Drawing.Font("Trebuchet MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInput.Location = new System.Drawing.Point(261, 17);
+            this.textBoxInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(188)))), ((int)(((byte)(156)))));
+            this.textBoxInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxInput.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(143)))), ((int)(((byte)(112)))));
+            this.textBoxInput.Location = new System.Drawing.Point(261, 15);
             this.textBoxInput.Name = "textBoxInput";
-            this.textBoxInput.Size = new System.Drawing.Size(252, 39);
+            this.textBoxInput.Size = new System.Drawing.Size(252, 43);
             this.textBoxInput.TabIndex = 2;
             // 
             // labelInputInfo
             // 
             this.labelInputInfo.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelInputInfo.AutoSize = true;
-            this.labelInputInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelInputInfo.Location = new System.Drawing.Point(56, 21);
+            this.labelInputInfo.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelInputInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(97)))), ((int)(((byte)(67)))));
+            this.labelInputInfo.Location = new System.Drawing.Point(43, 18);
             this.labelInputInfo.Name = "labelInputInfo";
-            this.labelInputInfo.Size = new System.Drawing.Size(199, 31);
+            this.labelInputInfo.Size = new System.Drawing.Size(212, 37);
             this.labelInputInfo.TabIndex = 0;
             this.labelInputInfo.Text = "Введите число";
             // 
@@ -266,16 +309,17 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 197);
+            this.textBox1.Location = new System.Drawing.Point(756, 185);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(384, 91);
+            this.textBox1.Size = new System.Drawing.Size(45, 50);
             this.textBox1.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(86)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(776, 333);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.InputCommandsPanel);
