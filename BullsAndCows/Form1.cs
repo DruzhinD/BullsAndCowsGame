@@ -59,7 +59,7 @@ namespace BullsAndCows
 
             _startTime = DateTime.Now;
 
-            DownloadAndShowStatistics();
+            //DownloadAndShowStatistics();
         }
 
         /// <summary>
@@ -115,19 +115,6 @@ namespace BullsAndCows
         private void buttonNewGame_Click(object sender, EventArgs e)
         {
             Application.Restart();
-        }
-
-        /// <summary>загрузка и отображение статистики</summary>
-        private void DownloadAndShowStatistics()
-        {
-            _statistics.DeserializeJson(path);
-            if (_statistics.Container != null)
-            {
-                foreach (GameInfoContainer line in _statistics.Container)
-                {
-                    textBox1.Text += line.ToString() + "\r\n";
-                }
-            }
         }
 
         private void UploadStatistics()
@@ -200,28 +187,16 @@ namespace BullsAndCows
         private int CalculateCowsCount(string userWord)
         {
             int cowsCount = 0;
-            //char[] splitCombNums = new char[CombinationLength];
-            //for (int i = 0; i < CombinationLength; i++)
-            //    splitCombNums[i] = SecretCombination[i];
-
-            //foreach (char splitUserWord in userWord)
-            //{
-            //    if (splitCombNums.Contains(splitUserWord))
-            //        cowsCount++;
-            //}
-
-            for (int i = 0; i < CombinationLength; i++)
+            foreach (char num in userWord)
             {
-                for (int j = 0; j < CombinationLength; j++)
+                //проверка на содержание цифры (только коровы)
+                if (SecretCombination.Contains(num))
                 {
-                    if (i == j)
-                    {
-                        continue;
-                    }
-                    if (SecretCombination[i] == userWord[j])
-                    {
+                    //проверка на быков.
+                    //причем достоверно известно, что комбинация содержит итерируемый символ,
+                    //это следует из предыдущего условия
+                    if (SecretCombination.IndexOf(num) != userWord.IndexOf(num))
                         cowsCount++;
-                    }
                 }
             }
             return cowsCount;
@@ -245,6 +220,12 @@ namespace BullsAndCows
                 "Если после очередной попытки отображено 4 быка, то вы победили!\r\n" +
                 "Удачи!";
             MessageBox.Show(howToPlay);
+        }
+
+        private void информацияОбИграхToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StatisticsForm statisticsForm = new StatisticsForm(_statistics);
+            statisticsForm.Show(this);
         }
     }
 }

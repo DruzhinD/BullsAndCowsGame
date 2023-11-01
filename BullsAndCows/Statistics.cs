@@ -71,6 +71,10 @@ namespace BullsAndCows
         /// <summary>комбинация, которую нужно было отгадать</summary>
         public int combination;
 
+        [JsonIgnore]
+        /// <summary>время, потраченное на то, чтобы отгадать комбинацию</summary>
+        public int timeSpan;
+
         /// <summary>имя пользователя</summary>
         [JsonIgnore]
         public string userName = null;
@@ -85,7 +89,7 @@ namespace BullsAndCows
 
         public override string ToString()
         {
-            return $"{attempts}\t{combination}";
+            return $"{attempts}\t{combination}\t{timeSpan}";
         }
     }
 }
