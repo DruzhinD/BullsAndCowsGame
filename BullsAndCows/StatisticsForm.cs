@@ -37,14 +37,14 @@ namespace BullsAndCows
         /// <summary>загрузка и отображение статистики</summary>
         private void LoadAndShowStatistics()
         {
-            string path = Path.GetFullPath(Path.Combine(
-                Directory.GetCurrentDirectory(), @"..\..\", "statistics.json"));
-            _statistics.DeserializeJson(path);
+            _statistics.DeserializeJson();
+            _statistics.Container.Sort();
             if (_statistics.Container != null)
             {
                 foreach (GameInfoContainer line in _statistics.Container)
                 {
-                    dataGridStatistics.Rows.Add(line.attempts, line.combination);
+                    dataGridStatistics.Rows.Add(
+                         $"{line.dateTime:g}", line.attempts, line.combination, $"{line.timeSpan:N1} с");
                 }
             }
         }

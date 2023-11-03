@@ -34,8 +34,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridStatistics = new System.Windows.Forms.DataGridView();
-            this.Attempts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeSpan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Combination = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Attempts = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfGame = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridStatistics)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,8 +64,10 @@
             this.dataGridStatistics.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridStatistics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridStatistics.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dateOfGame,
             this.Attempts,
-            this.Combination});
+            this.Combination,
+            this.timeSpan});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -76,7 +80,6 @@
             this.dataGridStatistics.EnableHeadersVisualStyles = false;
             this.dataGridStatistics.GridColor = System.Drawing.Color.DarkGray;
             this.dataGridStatistics.Location = new System.Drawing.Point(0, 0);
-            this.dataGridStatistics.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridStatistics.Name = "dataGridStatistics";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightSalmon;
@@ -100,14 +103,14 @@
             this.dataGridStatistics.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(87)))));
             this.dataGridStatistics.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(156)))), ((int)(((byte)(128)))));
             this.dataGridStatistics.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridStatistics.Size = new System.Drawing.Size(948, 825);
+            this.dataGridStatistics.Size = new System.Drawing.Size(684, 429);
             this.dataGridStatistics.TabIndex = 0;
             // 
-            // Attempts
+            // timeSpan
             // 
-            this.Attempts.HeaderText = "попытки";
-            this.Attempts.MinimumWidth = 10;
-            this.Attempts.Name = "Attempts";
+            this.timeSpan.HeaderText = "время";
+            this.timeSpan.Name = "timeSpan";
+            this.timeSpan.ReadOnly = true;
             // 
             // Combination
             // 
@@ -115,17 +118,28 @@
             this.Combination.MinimumWidth = 10;
             this.Combination.Name = "Combination";
             // 
+            // Attempts
+            // 
+            this.Attempts.HeaderText = "попытки";
+            this.Attempts.MinimumWidth = 10;
+            this.Attempts.Name = "Attempts";
+            // 
+            // dateOfGame
+            // 
+            this.dateOfGame.HeaderText = "Дата игры";
+            this.dateOfGame.Name = "dateOfGame";
+            this.dateOfGame.ReadOnly = true;
+            // 
             // StatisticsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(180)))), ((int)(((byte)(162)))));
-            this.ClientSize = new System.Drawing.Size(948, 825);
+            this.ClientSize = new System.Drawing.Size(684, 429);
             this.Controls.Add(this.dataGridStatistics);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(6);
-            this.MaximumSize = new System.Drawing.Size(974, 896);
-            this.MinimumSize = new System.Drawing.Size(774, 511);
+            this.MaximumSize = new System.Drawing.Size(700, 485);
+            this.MinimumSize = new System.Drawing.Size(600, 284);
             this.Name = "StatisticsForm";
             this.Text = "Игровая статистика";
             this.Load += new System.EventHandler(this.StatisticsForm_Load);
@@ -137,7 +151,9 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridStatistics;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfGame;
         private System.Windows.Forms.DataGridViewTextBoxColumn Attempts;
         private System.Windows.Forms.DataGridViewTextBoxColumn Combination;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeSpan;
     }
 }

@@ -10,10 +10,16 @@ namespace BullsAndCows
     [Serializable]
     public class Statistics
     {
+        /// <summary>путь к файлу</summary>
+        private readonly string path;
+
         /// <summary>список-контейнер для сериализации статистики</summary>
         public List<GameInfoContainer> Container = new List<GameInfoContainer>();
 
-        public Statistics() { }
+        public Statistics(string path)
+        {
+            this.path = path;
+        }
 
         /// <summary>параметры JSON сериализации</summary>
         [JsonIgnore]
@@ -30,10 +36,9 @@ namespace BullsAndCows
         /// <summary>
         /// Cериализация свойства Container класса Statistics
         /// </summary>
-        /// <param name="fileName">путь к файлу .json</param>
-        public void SerializeJson(string fileName)
+        public void SerializeJson()
         {
-            using (FileStream fileStream = File.Create(fileName))
+            using (FileStream fileStream = File.Create(path))
             {
                 JsonSerializer.Serialize(
                     utf8Json: fileStream, value: Container, options: options);
@@ -43,10 +48,9 @@ namespace BullsAndCows
         /// <summary>
         /// Десериализация свойства Container класса Statistics
         /// </summary>
-        /// <param name="fileName">путь к файлу .json</param>
-        public void DeserializeJson(string fileName)
+        public void DeserializeJson()
         {
-            using (FileStream fileStream = File.OpenRead(fileName))
+            using (FileStream fileStream = File.OpenRead(path))
             {
                 //в случае если в файле имеются данные, то выполняется десериализация
                 if (fileStream.Length != 0)
@@ -63,7 +67,7 @@ namespace BullsAndCows
     /// включает в себя поля, необходимые для сериализации
     /// </summary>
     [Serializable]
-    public class GameInfoContainer
+    public class GameInfoContainer: IComparable<GameInfoContainer>
     {
         /// <summary>количество попыток</summary>
         public int attempts;
@@ -71,25 +75,35 @@ namespace BullsAndCows
         /// <summary>комбинация, которую нужно было отгадать</summary>
         public int combination;
 
-        [JsonIgnore]
         /// <summary>время, потраченное на то, чтобы отгадать комбинацию</summary>
-        public int timeSpan;
+        public double timeSpan;
 
         /// <summary>имя пользователя</summary>
         [JsonIgnore]
         public string userName = null;
 
+        /// <summary>время, в которое была закончена игра</summary>
+        public DateTime dateTime;
+
         public GameInfoContainer() { }
 
-        public GameInfoContainer(int attempts, int combination)
+        public GameInfoContainer(int attempts, int combination, double timeSpan, DateTime dateTime)
         {
             this.attempts = attempts;
             this.combination = combination;
+            this.timeSpan = timeSpan;
+            this.dateTime = dateTime;
         }
 
         public override string ToString()
         {
             return $"{attempts}\t{combination}\t{timeSpan}";
+        }
+
+        public int CompareTo(GameInfoContainer gic)
+        {
+            if (gic is null) throw new Exception("Не удалось сравнить значения");
+            return attempts - gic.attempts;
         }
     }
 }

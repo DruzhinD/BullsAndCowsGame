@@ -28,10 +28,11 @@ namespace BullsAndCows
         /// <summary>промежуток времени, за который была завершена игра</summary>
         private TimeSpan _timeSpan;
 
+        static readonly string path = Path.GetFullPath(Path.Combine(
+            Directory.GetCurrentDirectory(), @"..\..\", "statistics.json"));
         /// <summary>поле для хранения статистики</summary>
-        private Statistics _statistics = new Statistics();
+        private Statistics _statistics = new Statistics(path);
 
-        string path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\", "statistics.json"));
 
         public MainForm()
         {
@@ -81,14 +82,6 @@ namespace BullsAndCows
             }
         }
 
-        /// <summary>сериализация статистики после завершения игры</summary>
-        private void UploadStatistics()
-        {
-            GameInfoContainer gameInfo = new GameInfoContainer(attempts, int.Parse(SecretCombination), _timeSpan.TotalSeconds);
-            _statistics.Container.Add(gameInfo);
-            _statistics.SerializeJson(path);
-        }
-
         /// <summary>
         /// обработка клика на кнопке следующей попытки
         /// </summary>
@@ -102,7 +95,7 @@ namespace BullsAndCows
         /// </summary>
         private void textBoxInput_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter & buttonNextAttempt.Enabled)
                 CheckAnswer();
         }
 
@@ -114,6 +107,16 @@ namespace BullsAndCows
             labelCongratulation.Text = $"Вы победили, используя {attempts} попытку(-ок)!";
             _timeSpan = DateTime.Now - _startTime;
             labelTimespan.Text = $"{_timeSpan.TotalSeconds:N1} c";
+        }
+
+        /// <summary>сериализация статистики после завершения игры</summary>
+        private void UploadStatistics()
+        {
+            _statistics.DeserializeJson();
+            GameInfoContainer gameInfo = new GameInfoContainer(
+                attempts, int.Parse(SecretCombination), _timeSpan.TotalSeconds, DateTime.Now);
+            _statistics.Container.Add(gameInfo);
+            _statistics.SerializeJson();
         }
 
         /// <summary>
@@ -158,5 +161,20 @@ namespace BullsAndCows
             StatisticsForm statisticsForm = new StatisticsForm(_statistics);
             statisticsForm.Show(this);
         }
+
+        #region текст, отображаемый на поле ввода до взаимодействия с пользователем (водяной знак)
+        private const string waterMark = "Введите число";
+        private void textBoxInput_Enter(object sender, EventArgs e)
+        {
+            if (textBoxInput.Text == waterMark)
+                textBoxInput.Text = string.Empty;
+        }
+
+        private void textBoxInput_Leave(object sender, EventArgs e)
+        {
+            if (textBoxInput.Text == string.Empty)
+                textBoxInput.Text = waterMark;
+        }
+        #endregion
     }
 }

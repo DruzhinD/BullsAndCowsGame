@@ -48,7 +48,6 @@
             this.какИгратьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InputCommandsPanel = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxInput = new System.Windows.Forms.TextBox();
-            this.labelInputInfo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonNextAttempt = new System.Windows.Forms.Button();
             this.buttonNewGame = new System.Windows.Forms.Button();
@@ -232,13 +231,12 @@
             // InputCommandsPanel
             // 
             this.InputCommandsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(157)))), ((int)(((byte)(125)))));
-            this.InputCommandsPanel.ColumnCount = 3;
-            this.InputCommandsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.InputCommandsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.InputCommandsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.InputCommandsPanel.Controls.Add(this.textBoxInput, 1, 0);
-            this.InputCommandsPanel.Controls.Add(this.labelInputInfo, 0, 0);
-            this.InputCommandsPanel.Controls.Add(this.panel1, 2, 0);
+            this.InputCommandsPanel.ColumnCount = 2;
+            this.InputCommandsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.InputCommandsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.InputCommandsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.InputCommandsPanel.Controls.Add(this.textBoxInput, 0, 0);
+            this.InputCommandsPanel.Controls.Add(this.panel1, 1, 0);
             this.InputCommandsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.InputCommandsPanel.Location = new System.Drawing.Point(0, 24);
             this.InputCommandsPanel.Name = "InputCommandsPanel";
@@ -254,32 +252,23 @@
             this.textBoxInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxInput.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(143)))), ((int)(((byte)(112)))));
-            this.textBoxInput.Location = new System.Drawing.Point(225, 12);
+            this.textBoxInput.Location = new System.Drawing.Point(3, 12);
             this.textBoxInput.Name = "textBoxInput";
-            this.textBoxInput.Size = new System.Drawing.Size(216, 43);
+            this.textBoxInput.Size = new System.Drawing.Size(327, 43);
             this.textBoxInput.TabIndex = 2;
+            this.textBoxInput.Text = "Введите число";
+            this.textBoxInput.Enter += new System.EventHandler(this.textBoxInput_Enter);
             this.textBoxInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxInput_KeyDown);
-            // 
-            // labelInputInfo
-            // 
-            this.labelInputInfo.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelInputInfo.AutoSize = true;
-            this.labelInputInfo.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelInputInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(97)))), ((int)(((byte)(67)))));
-            this.labelInputInfo.Location = new System.Drawing.Point(7, 15);
-            this.labelInputInfo.Name = "labelInputInfo";
-            this.labelInputInfo.Size = new System.Drawing.Size(212, 37);
-            this.labelInputInfo.TabIndex = 0;
-            this.labelInputInfo.Text = "Введите число";
+            this.textBoxInput.Leave += new System.EventHandler(this.textBoxInput_Leave);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.buttonNextAttempt);
             this.panel1.Controls.Add(this.buttonNewGame);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(447, 3);
+            this.panel1.Location = new System.Drawing.Point(336, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(216, 62);
+            this.panel1.Size = new System.Drawing.Size(327, 62);
             this.panel1.TabIndex = 3;
             // 
             // buttonNextAttempt
@@ -348,14 +337,13 @@
         private System.Windows.Forms.ToolStripMenuItem какИгратьToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel InputCommandsPanel;
         private System.Windows.Forms.Button buttonNextAttempt;
-        private System.Windows.Forms.TextBox textBoxInput;
-        private System.Windows.Forms.Label labelInputInfo;
         private System.Windows.Forms.DataGridViewTextBoxColumn attempt;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
         private System.Windows.Forms.DataGridViewTextBoxColumn bulls;
         private System.Windows.Forms.DataGridViewTextBoxColumn cows;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonNewGame;
+        private System.Windows.Forms.TextBox textBoxInput;
     }
 }
 
