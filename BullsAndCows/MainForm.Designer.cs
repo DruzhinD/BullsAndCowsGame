@@ -67,7 +67,7 @@
             this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bottomPanel.Location = new System.Drawing.Point(0, 288);
             this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(666, 39);
+            this.bottomPanel.Size = new System.Drawing.Size(634, 39);
             this.bottomPanel.TabIndex = 0;
             // 
             // labelTimespan
@@ -76,7 +76,7 @@
             this.labelTimespan.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelTimespan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelTimespan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(135)))), ((int)(((byte)(114)))));
-            this.labelTimespan.Location = new System.Drawing.Point(613, 0);
+            this.labelTimespan.Location = new System.Drawing.Point(581, 0);
             this.labelTimespan.Name = "labelTimespan";
             this.labelTimespan.Size = new System.Drawing.Size(51, 25);
             this.labelTimespan.TabIndex = 1;
@@ -105,6 +105,7 @@
             this.dataviewGameInfo.AllowUserToResizeColumns = false;
             this.dataviewGameInfo.AllowUserToResizeRows = false;
             this.dataviewGameInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataviewGameInfo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataviewGameInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(175)))), ((int)(((byte)(164)))));
             this.dataviewGameInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataviewGameInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -130,7 +131,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(133)))), ((int)(((byte)(113)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataviewGameInfo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataviewGameInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataviewGameInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataviewGameInfo.EnableHeadersVisualStyles = false;
             this.dataviewGameInfo.GridColor = System.Drawing.Color.DarkGray;
             this.dataviewGameInfo.Location = new System.Drawing.Point(0, 92);
@@ -150,7 +151,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(109)))), ((int)(((byte)(92)))));
             this.dataviewGameInfo.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataviewGameInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataviewGameInfo.Size = new System.Drawing.Size(666, 196);
+            this.dataviewGameInfo.Size = new System.Drawing.Size(634, 196);
             this.dataviewGameInfo.TabIndex = 1;
             // 
             // attempt
@@ -191,7 +192,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-            this.menuStrip.Size = new System.Drawing.Size(666, 27);
+            this.menuStrip.Size = new System.Drawing.Size(634, 27);
             this.menuStrip.TabIndex = 2;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -279,15 +280,16 @@
             this.panel1.Controls.Add(this.buttonNextAttempt);
             this.panel1.Controls.Add(this.textBoxInput);
             this.panel1.Controls.Add(this.buttonNewGame);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(666, 65);
+            this.panel1.Size = new System.Drawing.Size(634, 65);
             this.panel1.TabIndex = 0;
             // 
             // buttonNextAttempt
             // 
-            this.buttonNextAttempt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.buttonNextAttempt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonNextAttempt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(126)))), ((int)(((byte)(90)))));
             this.buttonNextAttempt.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(126)))), ((int)(((byte)(90)))));
             this.buttonNextAttempt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(94)))), ((int)(((byte)(66)))));
@@ -298,7 +300,7 @@
             this.buttonNextAttempt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(77)))), ((int)(((byte)(60)))));
             this.buttonNextAttempt.Location = new System.Drawing.Point(336, 3);
             this.buttonNextAttempt.Name = "buttonNextAttempt";
-            this.buttonNextAttempt.Size = new System.Drawing.Size(146, 59);
+            this.buttonNextAttempt.Size = new System.Drawing.Size(128, 59);
             this.buttonNextAttempt.TabIndex = 1;
             this.buttonNextAttempt.Text = "Проверить";
             this.buttonNextAttempt.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(77)))), ((int)(((byte)(60)))));
@@ -307,7 +309,8 @@
             // 
             // buttonNewGame
             // 
-            this.buttonNewGame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.buttonNewGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonNewGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(126)))), ((int)(((byte)(90)))));
             this.buttonNewGame.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(126)))), ((int)(((byte)(90)))));
             this.buttonNewGame.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(94)))), ((int)(((byte)(66)))));
@@ -316,9 +319,9 @@
             this.buttonNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNewGame.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNewGame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(77)))), ((int)(((byte)(60)))));
-            this.buttonNewGame.Location = new System.Drawing.Point(499, 3);
+            this.buttonNewGame.Location = new System.Drawing.Point(481, 3);
             this.buttonNewGame.Name = "buttonNewGame";
-            this.buttonNewGame.Size = new System.Drawing.Size(146, 59);
+            this.buttonNewGame.Size = new System.Drawing.Size(126, 59);
             this.buttonNewGame.TabIndex = 2;
             this.buttonNewGame.Text = "новая игра";
             this.buttonNewGame.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(77)))), ((int)(((byte)(60)))));
@@ -331,13 +334,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(86)))), ((int)(((byte)(53)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(666, 327);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(634, 327);
             this.Controls.Add(this.dataviewGameInfo);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.menuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
+            this.MinimumSize = new System.Drawing.Size(650, 350);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Быки и коровы";

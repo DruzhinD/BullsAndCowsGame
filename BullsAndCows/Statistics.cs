@@ -11,7 +11,7 @@ namespace BullsAndCows
     public class Statistics
     {
         /// <summary>путь к файлу</summary>
-        private readonly string path;
+        internal readonly string path;
 
         /// <summary>список-контейнер для сериализации статистики</summary>
         public List<GameInfoContainer> Container = new List<GameInfoContainer>();

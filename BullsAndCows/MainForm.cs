@@ -56,7 +56,8 @@ namespace BullsAndCows
         private void CheckAnswer()
         {
             string userCombination = textBoxInput.Text;
-            
+            textBoxInput.Text = string.Empty; //очистка поля ввода
+
             //проверка ввода
             string message = GameLogic.IsCorrectInput(userCombination);
             if (message != "0")
@@ -101,8 +102,12 @@ namespace BullsAndCows
                 e.SuppressKeyPress = true;
                 CheckAnswer();
             }
+            //перевод фокуса на кнопку
             else if (e.KeyCode == Keys.Escape)
+            {
+                buttonNextAttempt.Focus();
                 e.SuppressKeyPress = true;
+            }
         }
 
         /// <summary>
@@ -125,12 +130,54 @@ namespace BullsAndCows
             //если игрок угадал комбинацию
             else
             {
+                string wordAttempt = string.Empty;
+                //for (int i = 0; i <= 9; i++)
+                //{
+                //if (attempts.ToString().EndsWith(i.ToString()) )
+
+                //}
+
                 labelCongratulation.Visible = true;
-                labelCongratulation.Text = $"Вы победили, используя {attempts} попытку(-ок)!";
+                labelCongratulation.Text = $"Вы победили, используя {attempts} {WordByAmountAttempts()}!";
                 _timeSpan = DateTime.Now - _startTime;
                 labelTimespan.Visible = true;
                 labelTimespan.Text = $"{_timeSpan.TotalSeconds:N1} c";
             }
+        }
+
+        private string WordByAmountAttempts()
+        {
+            string wordAttempt = string.Empty;
+            //какой цифрой оканчивается
+            int endSymd = int.Parse(attempts.ToString()[attempts.ToString().Length - 1].ToString());
+
+            //особая проверка для чисел от 11 до 19
+            for (int i = 11; i <= 19; i++)
+            {
+                if (attempts == i)
+                    return "попыток";
+            }
+
+            if (endSymd == 0)
+                return "попыток";
+            //1 попытка
+            else if (endSymd == 1)
+                return "попытку";
+            
+            //от 2 до 4
+            for (int i = 2; i <= 4; i++)
+            {
+                if (endSymd == i)
+                    return "попытки";
+            }
+            //от 5 до 9
+            for (int i = 5; i <= 9; i++)
+            {
+                if (endSymd == i)
+                    return "попыток";
+            }
+            //заглушка для ошибки
+            return "попыток";
         }
 
         /// <summary>сериализация статистики после завершения игры</summary>
@@ -173,6 +220,7 @@ namespace BullsAndCows
                     $"Игра окончена :(\n" +
                     $"В следующий раз обязательно получится!";
                 MessageBox.Show(message, "ответ");
+                flagGameOver = true;
                 GameOverBottomInfo(true); //игрок сдался
             }
             //продолжение игры
@@ -184,7 +232,7 @@ namespace BullsAndCows
         private void информацияОбИграхToolStripMenuItem_Click(object sender, EventArgs e)
         {
             StatisticsForm statisticsForm = new StatisticsForm(_statistics);
-            statisticsForm.Show(this);
+            statisticsForm.Show();
         }
 
         private void какИгратьToolStripMenuItem_Click(object sender, EventArgs e)

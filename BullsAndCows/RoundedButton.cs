@@ -78,20 +78,6 @@ namespace BullsAndCows
             this.Resize += new EventHandler(Button_Resize);
         }
 
-        //методы
-        private GraphicsPath GetFigurePath(RectangleF rect, float radius)
-        {
-            GraphicsPath path = new GraphicsPath();
-            path.StartFigure();
-            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
-            path.AddArc(rect.Width-radius, rect.Y, radius, radius, 270, 90);
-            path.AddArc(rect.Width - radius, rect.Height - radius, radius, radius, 0, 90);
-            path.AddArc(rect.X, rect.Height - radius, radius, radius, 90, 90);
-            path.CloseFigure();
-
-            return path;
-        }
-
         protected override void OnPaint(PaintEventArgs pevent)
         {
             base.OnPaint(pevent);
@@ -135,6 +121,25 @@ namespace BullsAndCows
             }
         }
 
+        //методы
+        private GraphicsPath GetFigurePath(RectangleF rect, float radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.Width - radius, rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            return path;
+        }
+
+        private void Button_Resize(object sender, EventArgs e)
+        {
+            if (borderRadius > Height)
+                BorderRadius = Height;
+        }
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
@@ -147,10 +152,21 @@ namespace BullsAndCows
                 this.Invalidate();
         }
 
-        private void Button_Resize(object sender, EventArgs e)
+        protected override void OnEnabledChanged(EventArgs e)
         {
-            if (borderRadius > Height)
-                BorderRadius = Height;
+            if (Enabled)
+            {
+                BackColor = Color.FromArgb(203, 126, 90);
+                TextColor = Color.FromArgb(144, 77, 60);
+                borderColor = Color.FromArgb(162, 94, 66);
+            }
+            else
+            {
+                BackColor = Color.FromArgb(217, 217, 217);
+                TextColor = Color.FromArgb(141, 141, 141);
+                borderColor = Color.FromArgb(141, 141, 141);
+            }
+            base.OnEnabledChanged(e);
         }
     }
 }

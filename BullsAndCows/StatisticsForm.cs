@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BullsAndCows
 {
@@ -46,6 +45,27 @@ namespace BullsAndCows
                     dataGridStatistics.Rows.Add(
                          $"{line.dateTime:g}", line.attempts, line.combination, $"{line.timeSpan:N1} с");
                 }
+            }
+        }
+
+        private void buttonClearStats_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show(
+                "Вы точно хотите безвозвратно удалить статистику?", "Очистка", MessageBoxButtons.YesNo))
+            {
+                //очистка файла сериализации
+                using (StreamWriter sw = new StreamWriter(_statistics.path, false))
+                {
+                    sw.Write("");
+                }
+
+                //очистка таблицы
+                if (dataGridStatistics.Rows.Count > 0)
+                    dataGridStatistics.Rows.Clear();
+            }
+            else
+            {
+                return;
             }
         }
     }
