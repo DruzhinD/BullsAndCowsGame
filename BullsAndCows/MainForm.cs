@@ -17,10 +17,10 @@ namespace BullsAndCows
         public string SecretCombination { get; private set; } = string.Empty;
 
         /// <summary>Длина комбинации</summary>
-        public const int CombinationLength = 4;
+        private const int CombinationLength = 4;
 
         /// <summary>счетчик попыток</summary>
-        public int attempts = 0;
+        private int attempts = 0;
 
         /// <summary>системное время, при котором началась игра</summary>
         private DateTime _startTime;
@@ -33,19 +33,19 @@ namespace BullsAndCows
         /// <summary>поле для хранения статистики</summary>
         private Statistics _statistics = new Statistics(path);
 
+        /// <summary>флаг окончания игры</summary>
+        private bool flagGameOver = false;
 
         public MainForm()
         {
             InitializeComponent();
         }
 
-        //вызывается каждый раз при открытии формы (из свернутого состояния), но это неточно
         private void Form1_Load(object sender, EventArgs e)
         {
             //генерация комбинации
             SecretCombination = GameLogic.GenCombination(CombinationLength);
-            labelCongratulation.Text = SecretCombination;
-
+            //сохранение времени начала игры
             _startTime = DateTime.Now;
         }
 
@@ -56,7 +56,8 @@ namespace BullsAndCows
         private void CheckAnswer()
         {
             string userCombination = textBoxInput.Text;
-
+            
+            //проверка ввода
             string message = GameLogic.IsCorrectInput(userCombination);
             if (message != "0")
             {
@@ -70,15 +71,14 @@ namespace BullsAndCows
 
             dataviewGameInfo.Rows.Add(attempts, userCombination, bulls, cows);
 
+            //проверка победы
             if (bulls == CombinationLength)
             {
-                GameOverBottomInfo();
+                flagGameOver = true;
+                GameOverBottomInfo(false); //пользователь завершил игру, угадав ответ
                 UploadStatistics();
 
                 MessageBox.Show("Ура! победа");
-                buttonNextAttempt.Enabled = false;
-                buttonNextAttempt.Visible = false;
-                ShowButtonNewGame();
             }
         }
 
@@ -95,18 +95,42 @@ namespace BullsAndCows
         /// </summary>
         private void textBoxInput_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter & buttonNextAttempt.Enabled)
+            //ввод ответа
+            if (e.KeyCode == Keys.Enter & flagGameOver != true)
+            {
+                e.SuppressKeyPress = true;
                 CheckAnswer();
+            }
+            else if (e.KeyCode == Keys.Escape)
+                e.SuppressKeyPress = true;
         }
 
         /// <summary>
-        /// Информация, которая выводится внизу формы после завершения игры
+        /// Информация, которая выводится внизу формы после завершения игры.
+        /// А также отключение кнопки следующей попытки
         /// </summary>
-        private void GameOverBottomInfo()
+        /// <param name="giveUp">false - игра завершена, если пользователь угадал комбинацию,
+        /// true - если воспользовался возможностью посмотреть ответ</param>
+        private void GameOverBottomInfo(bool giveUp)
         {
-            labelCongratulation.Text = $"Вы победили, используя {attempts} попытку(-ок)!";
-            _timeSpan = DateTime.Now - _startTime;
-            labelTimespan.Text = $"{_timeSpan.TotalSeconds:N1} c";
+            buttonNextAttempt.Enabled = false; //отключаем кнопку следующей попытки
+            //если игрок сдался
+            if (giveUp)
+            {
+                labelCongratulation.Visible = true;
+                labelCongratulation.Text = "Игра окончена";
+                labelTimespan.Visible = true;
+                labelTimespan.Text = $"Комбинация: {SecretCombination}";
+            }
+            //если игрок угадал комбинацию
+            else
+            {
+                labelCongratulation.Visible = true;
+                labelCongratulation.Text = $"Вы победили, используя {attempts} попытку(-ок)!";
+                _timeSpan = DateTime.Now - _startTime;
+                labelTimespan.Visible = true;
+                labelTimespan.Text = $"{_timeSpan.TotalSeconds:N1} c";
+            }
         }
 
         /// <summary>сериализация статистики после завершения игры</summary>
@@ -120,28 +144,47 @@ namespace BullsAndCows
         }
 
         /// <summary>
-        /// Отображение кнопки для начала новой игры после завершения текущей
+        /// обработка клика для начала новой игры
         /// </summary>
-        private void ShowButtonNewGame()
-        {
-            buttonNewGame.Enabled = true;
-            buttonNewGame.Visible = true;
-            buttonNewGame.BringToFront();
-        }
-
-        /// <summary>
-        /// обработка клика по кнопке начала новой игры
-        /// </summary>
-        private void buttonNewGame_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-        }
-        private void новаяИграToolStripMenuItem_Click(object sender, EventArgs e)
+        private void NewGameEvent_Click(object sender, EventArgs eventArgs)
         {
             if (DialogResult.OK == MessageBox.Show("Вы точно хотите начать заново?", "Перезапуск", MessageBoxButtons.OKCancel))
             {
                 Application.Restart();
             }
+        }
+
+        /// <summary>
+        /// узнать ответ, при этом завершив игру поражением
+        /// </summary>
+        private void показатьОтветToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //если игра завершена, то ответ уже известен, пользователь получит соответствующий вывод
+            if (flagGameOver)
+            {
+                MessageBox.Show("Игра уже окончена!", "Ответ");
+                return;
+            }
+            //конец игры
+            if (DialogResult.Yes == MessageBox.Show("Вы точно хотите узнать ответ?\n" +
+                "Если узнать его не доиграв, вы проиграете!", "Ответ", MessageBoxButtons.YesNo))
+            {
+                string message = $"комбинация: {SecretCombination}\n" +
+                    $"Игра окончена :(\n" +
+                    $"В следующий раз обязательно получится!";
+                MessageBox.Show(message, "ответ");
+                GameOverBottomInfo(true); //игрок сдался
+            }
+            //продолжение игры
+            else
+            {
+                return;
+            }
+        }
+        private void информацияОбИграхToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StatisticsForm statisticsForm = new StatisticsForm(_statistics);
+            statisticsForm.Show(this);
         }
 
         private void какИгратьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,12 +197,6 @@ namespace BullsAndCows
                 "Если после очередной попытки отображено 4 быка, то вы победили!\r\n" +
                 "Удачи!";
             MessageBox.Show(howToPlay);
-        }
-
-        private void информацияОбИграхToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            StatisticsForm statisticsForm = new StatisticsForm(_statistics);
-            statisticsForm.Show(this);
         }
 
         #region текст, отображаемый на поле ввода до взаимодействия с пользователем (водяной знак)
@@ -176,5 +213,6 @@ namespace BullsAndCows
                 textBoxInput.Text = waterMark;
         }
         #endregion
+
     }
 }

@@ -1,6 +1,68 @@
 [
   {
-    "attempts": 16,
-    "combination": 3489
+    "attempts": 2,
+    "combination": 7806,
+    "timeSpan": 6.7565632999999998,
+    "dateTime": "2023-11-04T00:01:14.8388072+10:00"
+  },
+  {
+    "attempts": 7,
+    "combination": 8149,
+    "timeSpan": 11.239220599999999,
+    "dateTime": "2023-11-04T00:02:31.0221936+10:00"
+  },
+  {
+    "attempts": 8,
+    "combination": 8149,
+    "timeSpan": 27.257527799999998,
+    "dateTime": "2023-11-04T00:02:47.0405083+10:00"
+  },
+  {
+    "attempts": 9,
+    "combination": 8149,
+    "timeSpan": 28.1782319,
+    "dateTime": "2023-11-04T00:02:47.9602124+10:00"
+  },
+  {
+    "attempts": 10,
+    "combination": 8149,
+    "timeSpan": 28.8165491,
+    "dateTime": "2023-11-04T00:02:48.5985296+10:00"
+  },
+  {
+    "attempts": 1,
+    "combination": 7305,
+    "timeSpan": 5.2046440999999994,
+    "dateTime": "2023-11-04T00:04:13.3938818+10:00"
+  },
+  {
+    "attempts": 4,
+    "combination": 7083,
+    "timeSpan": 36.851980999999995,
+    "dateTime": "2023-11-04T14:30:51.6814935+10:00"
+  },
+  {
+    "attempts": 4,
+    "combination": 4029,
+    "timeSpan": 16.583023300000001,
+    "dateTime": "2023-11-04T15:22:47.6595766+10:00"
+  },
+  {
+    "attempts": 7,
+    "combination": 2173,
+    "timeSpan": 95.832688199999993,
+    "dateTime": "2023-11-04T23:22:23.9522663+10:00"
+  },
+  {
+    "attempts": 7,
+    "combination": 7542,
+    "timeSpan": 153.97753470000001,
+    "dateTime": "2023-11-04T23:29:27.4803636+10:00"
+  },
+  {
+    "attempts": 7,
+    "combination": 8097,
+    "timeSpan": 144.4454752,
+    "dateTime": "2023-11-05T12:47:54.5345699+10:00"
   }
 ]

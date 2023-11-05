@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace BullsAndCows
 {
+    ///<summary>Статический класс, содержащий в себе всю игровую логику</summary>    
     internal static class GameLogic
     {
         /// <summary>
