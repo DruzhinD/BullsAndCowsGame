@@ -60,7 +60,7 @@
             // 
             // bottomPanel
             // 
-            this.bottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(113)))), ((int)(((byte)(105)))));
+            this.bottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(202)))), ((int)(((byte)(78)))));
             this.bottomPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.bottomPanel.Controls.Add(this.labelTimespan);
             this.bottomPanel.Controls.Add(this.labelCongratulation);
@@ -75,7 +75,7 @@
             this.labelTimespan.AutoSize = true;
             this.labelTimespan.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelTimespan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTimespan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(135)))), ((int)(((byte)(114)))));
+            this.labelTimespan.ForeColor = System.Drawing.Color.Black;
             this.labelTimespan.Location = new System.Drawing.Point(581, 0);
             this.labelTimespan.Name = "labelTimespan";
             this.labelTimespan.Size = new System.Drawing.Size(51, 25);
@@ -89,7 +89,7 @@
             this.labelCongratulation.AutoSize = true;
             this.labelCongratulation.Dock = System.Windows.Forms.DockStyle.Left;
             this.labelCongratulation.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCongratulation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(135)))), ((int)(((byte)(114)))));
+            this.labelCongratulation.ForeColor = System.Drawing.Color.Black;
             this.labelCongratulation.Location = new System.Drawing.Point(0, 0);
             this.labelCongratulation.Name = "labelCongratulation";
             this.labelCongratulation.Size = new System.Drawing.Size(90, 25);
@@ -106,13 +106,13 @@
             this.dataviewGameInfo.AllowUserToResizeRows = false;
             this.dataviewGameInfo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataviewGameInfo.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataviewGameInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(175)))), ((int)(((byte)(164)))));
+            this.dataviewGameInfo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(78)))), ((int)(((byte)(91)))));
             this.dataviewGameInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataviewGameInfo.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(52)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(91)))), ((int)(((byte)(74)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(91)))), ((int)(((byte)(61)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(52)))), ((int)(((byte)(35)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(91)))), ((int)(((byte)(61)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -124,9 +124,9 @@
             this.bulls,
             this.cows});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(109)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(115)))), ((int)(((byte)(85)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(158)))), ((int)(((byte)(134)))));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(75)))), ((int)(((byte)(63)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(133)))), ((int)(((byte)(113)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -148,7 +148,7 @@
             this.dataviewGameInfo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataviewGameInfo.RowHeadersVisible = false;
             this.dataviewGameInfo.RowHeadersWidth = 82;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(109)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(115)))), ((int)(((byte)(85)))));
             this.dataviewGameInfo.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataviewGameInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataviewGameInfo.Size = new System.Drawing.Size(634, 196);
@@ -184,7 +184,7 @@
             // 
             // menuStrip
             // 
-            this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(114)))), ((int)(((byte)(70)))));
+            this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(122)))), ((int)(((byte)(64)))));
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.играToolStripMenuItem,
@@ -203,16 +203,16 @@
             this.показатьОтветToolStripMenuItem,
             this.информацияОбИграхToolStripMenuItem});
             this.играToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.играToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(62)))), ((int)(((byte)(37)))));
+            this.играToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.играToolStripMenuItem.Name = "играToolStripMenuItem";
             this.играToolStripMenuItem.Size = new System.Drawing.Size(58, 25);
             this.играToolStripMenuItem.Text = "игра";
             // 
             // новаяИграToolStripMenuItem
             // 
-            this.новаяИграToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(114)))), ((int)(((byte)(70)))));
+            this.новаяИграToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(122)))), ((int)(((byte)(64)))));
             this.новаяИграToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.новаяИграToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(62)))), ((int)(((byte)(37)))));
+            this.новаяИграToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.новаяИграToolStripMenuItem.Name = "новаяИграToolStripMenuItem";
             this.новаяИграToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.новаяИграToolStripMenuItem.Text = "новая игра";
@@ -220,9 +220,9 @@
             // 
             // показатьОтветToolStripMenuItem
             // 
-            this.показатьОтветToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(114)))), ((int)(((byte)(70)))));
-            this.показатьОтветToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.показатьОтветToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(62)))), ((int)(((byte)(37)))));
+            this.показатьОтветToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(122)))), ((int)(((byte)(64)))));
+            this.показатьОтветToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.показатьОтветToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.показатьОтветToolStripMenuItem.Name = "показатьОтветToolStripMenuItem";
             this.показатьОтветToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.показатьОтветToolStripMenuItem.Text = "показать ответ";
@@ -230,9 +230,9 @@
             // 
             // информацияОбИграхToolStripMenuItem
             // 
-            this.информацияОбИграхToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(114)))), ((int)(((byte)(70)))));
+            this.информацияОбИграхToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(122)))), ((int)(((byte)(64)))));
             this.информацияОбИграхToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.информацияОбИграхToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(62)))), ((int)(((byte)(37)))));
+            this.информацияОбИграхToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.информацияОбИграхToolStripMenuItem.Name = "информацияОбИграхToolStripMenuItem";
             this.информацияОбИграхToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.информацияОбИграхToolStripMenuItem.Text = "информация об играх";
@@ -243,28 +243,28 @@
             this.помощьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.какИгратьToolStripMenuItem});
             this.помощьToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.помощьToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(62)))), ((int)(((byte)(37)))));
+            this.помощьToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.помощьToolStripMenuItem.Name = "помощьToolStripMenuItem";
             this.помощьToolStripMenuItem.Size = new System.Drawing.Size(87, 25);
             this.помощьToolStripMenuItem.Text = "помощь";
             // 
             // какИгратьToolStripMenuItem
             // 
-            this.какИгратьToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(114)))), ((int)(((byte)(70)))));
+            this.какИгратьToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(122)))), ((int)(((byte)(64)))));
             this.какИгратьToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.какИгратьToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(62)))), ((int)(((byte)(37)))));
+            this.какИгратьToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.какИгратьToolStripMenuItem.Name = "какИгратьToolStripMenuItem";
-            this.какИгратьToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.какИгратьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.какИгратьToolStripMenuItem.Text = "Как играть?";
             this.какИгратьToolStripMenuItem.Click += new System.EventHandler(this.какИгратьToolStripMenuItem_Click);
             // 
             // textBoxInput
             // 
             this.textBoxInput.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(188)))), ((int)(((byte)(156)))));
+            this.textBoxInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(217)))), ((int)(((byte)(194)))));
             this.textBoxInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxInput.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(143)))), ((int)(((byte)(112)))));
+            this.textBoxInput.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.textBoxInput.Location = new System.Drawing.Point(3, 13);
             this.textBoxInput.Name = "textBoxInput";
             this.textBoxInput.Size = new System.Drawing.Size(327, 36);
@@ -276,7 +276,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(157)))), ((int)(((byte)(125)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(179)))), ((int)(((byte)(156)))));
             this.panel1.Controls.Add(this.buttonNextAttempt);
             this.panel1.Controls.Add(this.textBoxInput);
             this.panel1.Controls.Add(this.buttonNewGame);
@@ -290,20 +290,20 @@
             // 
             this.buttonNextAttempt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonNextAttempt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(126)))), ((int)(((byte)(90)))));
-            this.buttonNextAttempt.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(126)))), ((int)(((byte)(90)))));
-            this.buttonNextAttempt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(94)))), ((int)(((byte)(66)))));
+            this.buttonNextAttempt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(179)))), ((int)(((byte)(220)))));
+            this.buttonNextAttempt.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(179)))), ((int)(((byte)(220)))));
+            this.buttonNextAttempt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(137)))), ((int)(((byte)(169)))));
             this.buttonNextAttempt.BorderRadius = 40;
             this.buttonNextAttempt.BorderSize = 4;
             this.buttonNextAttempt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNextAttempt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNextAttempt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(77)))), ((int)(((byte)(60)))));
+            this.buttonNextAttempt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.buttonNextAttempt.Location = new System.Drawing.Point(336, 3);
             this.buttonNextAttempt.Name = "buttonNextAttempt";
             this.buttonNextAttempt.Size = new System.Drawing.Size(128, 59);
             this.buttonNextAttempt.TabIndex = 1;
             this.buttonNextAttempt.Text = "Проверить";
-            this.buttonNextAttempt.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(77)))), ((int)(((byte)(60)))));
+            this.buttonNextAttempt.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.buttonNextAttempt.UseVisualStyleBackColor = false;
             this.buttonNextAttempt.Click += new System.EventHandler(this.buttonNextAttempt_Click);
             // 
@@ -311,20 +311,20 @@
             // 
             this.buttonNewGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonNewGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(126)))), ((int)(((byte)(90)))));
-            this.buttonNewGame.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(126)))), ((int)(((byte)(90)))));
-            this.buttonNewGame.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(94)))), ((int)(((byte)(66)))));
+            this.buttonNewGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(179)))), ((int)(((byte)(220)))));
+            this.buttonNewGame.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(179)))), ((int)(((byte)(220)))));
+            this.buttonNewGame.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(137)))), ((int)(((byte)(169)))));
             this.buttonNewGame.BorderRadius = 40;
             this.buttonNewGame.BorderSize = 4;
             this.buttonNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNewGame.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNewGame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(77)))), ((int)(((byte)(60)))));
+            this.buttonNewGame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.buttonNewGame.Location = new System.Drawing.Point(481, 3);
             this.buttonNewGame.Name = "buttonNewGame";
             this.buttonNewGame.Size = new System.Drawing.Size(126, 59);
             this.buttonNewGame.TabIndex = 2;
             this.buttonNewGame.Text = "новая игра";
-            this.buttonNewGame.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(77)))), ((int)(((byte)(60)))));
+            this.buttonNewGame.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.buttonNewGame.UseVisualStyleBackColor = false;
             this.buttonNewGame.Click += new System.EventHandler(this.NewGameEvent_Click);
             // 
