@@ -73,7 +73,7 @@ namespace BullsAndCows
         public int attempts;
 
         /// <summary>комбинация, которую нужно было отгадать</summary>
-        public int combination;
+        public string combination;
 
         /// <summary>время, потраченное на то, чтобы отгадать комбинацию</summary>
         public double timeSpan;
@@ -87,7 +87,7 @@ namespace BullsAndCows
 
         public GameInfoContainer() { }
 
-        public GameInfoContainer(int attempts, int combination, double timeSpan, DateTime dateTime)
+        public GameInfoContainer(int attempts, string combination, double timeSpan, DateTime dateTime)
         {
             this.attempts = attempts;
             this.combination = combination;

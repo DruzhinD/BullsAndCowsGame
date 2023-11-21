@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BullsAndCows
@@ -43,6 +36,9 @@ namespace BullsAndCows
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //инициализация рендера, необходимого для изменения цвета выделения при наведении курсора
+            menuStrip.Renderer = new MyRenderer(menuStrip.BackColor);
+
             //генерация комбинации
             SecretCombination = GameLogic.GenCombination(CombinationLength);
             //сохранение времени начала игры
@@ -185,7 +181,7 @@ namespace BullsAndCows
         {
             _statistics.DeserializeJson();
             GameInfoContainer gameInfo = new GameInfoContainer(
-                attempts, int.Parse(SecretCombination), _timeSpan.TotalSeconds, DateTime.Now);
+                attempts, SecretCombination, _timeSpan.TotalSeconds, DateTime.Now);
             _statistics.Container.Add(gameInfo);
             _statistics.SerializeJson();
         }
@@ -195,7 +191,7 @@ namespace BullsAndCows
         /// </summary>
         private void NewGameEvent_Click(object sender, EventArgs eventArgs)
         {
-            if (DialogResult.OK == MessageBox.Show("Вы точно хотите начать заново?", "Перезапуск", MessageBoxButtons.OKCancel))
+            if (DialogResult.OK == MessageBox.Show("Вы точно хотите начать заново?", "Новая игра", MessageBoxButtons.OKCancel))
             {
                 Application.Restart();
             }
@@ -244,7 +240,7 @@ namespace BullsAndCows
                 "соответственно с большим количество быков и коров аналогично.\r\n" +
                 "Если после очередной попытки отображено 4 быка, то вы победили!\r\n" +
                 "Удачи!";
-            MessageBox.Show(howToPlay);
+            MessageBox.Show(howToPlay, "Правила игры");
         }
 
         #region текст, отображаемый на поле ввода до взаимодействия с пользователем (водяной знак)

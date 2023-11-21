@@ -42,12 +42,12 @@
             this.bulls = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cows = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.новаяИграToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.показатьОтветToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.информацияОбИграхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.какИгратьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.играToolStripMenuItem = new BullsAndCows.CustomToolStripMenuItem();
+            this.новаяИграToolStripMenuItem = new BullsAndCows.CustomToolStripMenuItem();
+            this.показатьОтветToolStripMenuItem = new BullsAndCows.CustomToolStripMenuItem();
+            this.информацияОбИграхToolStripMenuItem = new BullsAndCows.CustomToolStripMenuItem();
+            this.помощьToolStripMenuItem = new BullsAndCows.CustomToolStripMenuItem();
+            this.какИгратьToolStripMenuItem = new BullsAndCows.CustomToolStripMenuItem();
             this.textBoxInput = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonNextAttempt = new BullsAndCows.RoundedButton();
@@ -65,9 +65,9 @@
             this.bottomPanel.Controls.Add(this.labelTimespan);
             this.bottomPanel.Controls.Add(this.labelCongratulation);
             this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottomPanel.Location = new System.Drawing.Point(0, 288);
+            this.bottomPanel.Location = new System.Drawing.Point(0, 404);
             this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(634, 39);
+            this.bottomPanel.Size = new System.Drawing.Size(667, 39);
             this.bottomPanel.TabIndex = 0;
             // 
             // labelTimespan
@@ -76,7 +76,7 @@
             this.labelTimespan.Dock = System.Windows.Forms.DockStyle.Right;
             this.labelTimespan.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelTimespan.ForeColor = System.Drawing.Color.Black;
-            this.labelTimespan.Location = new System.Drawing.Point(581, 0);
+            this.labelTimespan.Location = new System.Drawing.Point(614, 0);
             this.labelTimespan.Name = "labelTimespan";
             this.labelTimespan.Size = new System.Drawing.Size(51, 25);
             this.labelTimespan.TabIndex = 1;
@@ -151,7 +151,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(115)))), ((int)(((byte)(85)))));
             this.dataviewGameInfo.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataviewGameInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataviewGameInfo.Size = new System.Drawing.Size(634, 196);
+            this.dataviewGameInfo.Size = new System.Drawing.Size(667, 312);
             this.dataviewGameInfo.TabIndex = 1;
             // 
             // attempt
@@ -192,7 +192,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(3, 1, 0, 1);
-            this.menuStrip.Size = new System.Drawing.Size(634, 27);
+            this.menuStrip.Size = new System.Drawing.Size(667, 27);
             this.menuStrip.TabIndex = 2;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -240,6 +240,7 @@
             // 
             // помощьToolStripMenuItem
             // 
+            this.помощьToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(122)))), ((int)(((byte)(64)))));
             this.помощьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.какИгратьToolStripMenuItem});
             this.помощьToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -254,13 +255,12 @@
             this.какИгратьToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.какИгратьToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.какИгратьToolStripMenuItem.Name = "какИгратьToolStripMenuItem";
-            this.какИгратьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.какИгратьToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.какИгратьToolStripMenuItem.Text = "Как играть?";
             this.какИгратьToolStripMenuItem.Click += new System.EventHandler(this.какИгратьToolStripMenuItem_Click);
             // 
             // textBoxInput
             // 
-            this.textBoxInput.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.textBoxInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(217)))), ((int)(((byte)(194)))));
             this.textBoxInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxInput.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -283,24 +283,23 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(634, 65);
+            this.panel1.Padding = new System.Windows.Forms.Padding(0, 3, 10, 3);
+            this.panel1.Size = new System.Drawing.Size(667, 65);
             this.panel1.TabIndex = 0;
             // 
             // buttonNextAttempt
             // 
-            this.buttonNextAttempt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonNextAttempt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(179)))), ((int)(((byte)(220)))));
             this.buttonNextAttempt.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(179)))), ((int)(((byte)(220)))));
             this.buttonNextAttempt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(137)))), ((int)(((byte)(169)))));
-            this.buttonNextAttempt.BorderRadius = 40;
+            this.buttonNextAttempt.BorderRadius = 39;
             this.buttonNextAttempt.BorderSize = 4;
             this.buttonNextAttempt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNextAttempt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNextAttempt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
             this.buttonNextAttempt.Location = new System.Drawing.Point(336, 3);
             this.buttonNextAttempt.Name = "buttonNextAttempt";
-            this.buttonNextAttempt.Size = new System.Drawing.Size(128, 59);
+            this.buttonNextAttempt.Size = new System.Drawing.Size(135, 59);
             this.buttonNextAttempt.TabIndex = 1;
             this.buttonNextAttempt.Text = "Проверить";
             this.buttonNextAttempt.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
@@ -309,19 +308,19 @@
             // 
             // buttonNewGame
             // 
-            this.buttonNewGame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonNewGame.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonNewGame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(179)))), ((int)(((byte)(220)))));
             this.buttonNewGame.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(179)))), ((int)(((byte)(220)))));
             this.buttonNewGame.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(137)))), ((int)(((byte)(169)))));
             this.buttonNewGame.BorderRadius = 40;
             this.buttonNewGame.BorderSize = 4;
+            this.buttonNewGame.Dock = System.Windows.Forms.DockStyle.Right;
             this.buttonNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNewGame.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNewGame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
-            this.buttonNewGame.Location = new System.Drawing.Point(481, 3);
+            this.buttonNewGame.Location = new System.Drawing.Point(522, 3);
             this.buttonNewGame.Name = "buttonNewGame";
-            this.buttonNewGame.Size = new System.Drawing.Size(126, 59);
+            this.buttonNewGame.Size = new System.Drawing.Size(135, 59);
             this.buttonNewGame.TabIndex = 2;
             this.buttonNewGame.Text = "новая игра";
             this.buttonNewGame.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(228)))), ((int)(((byte)(202)))));
@@ -334,7 +333,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(86)))), ((int)(((byte)(53)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(634, 327);
+            this.ClientSize = new System.Drawing.Size(667, 443);
             this.Controls.Add(this.dataviewGameInfo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.bottomPanel);
@@ -365,11 +364,11 @@
         private System.Windows.Forms.Label labelTimespan;
         private System.Windows.Forms.DataGridView dataviewGameInfo;
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem играToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem новаяИграToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem информацияОбИграхToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem какИгратьToolStripMenuItem;
+        private CustomToolStripMenuItem играToolStripMenuItem;
+        private CustomToolStripMenuItem помощьToolStripMenuItem;
+        private CustomToolStripMenuItem новаяИграToolStripMenuItem;
+        private CustomToolStripMenuItem информацияОбИграхToolStripMenuItem;
+        private CustomToolStripMenuItem какИгратьToolStripMenuItem;
         private BullsAndCows.RoundedButton buttonNextAttempt;
         private System.Windows.Forms.DataGridViewTextBoxColumn attempt;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;
@@ -378,7 +377,7 @@
         private BullsAndCows.RoundedButton buttonNewGame;
         private System.Windows.Forms.TextBox textBoxInput;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStripMenuItem показатьОтветToolStripMenuItem;
+        private CustomToolStripMenuItem показатьОтветToolStripMenuItem;
     }
 }
 

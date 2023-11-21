@@ -1,32 +1,68 @@
 [
   {
     "attempts": 7,
-    "combination": 5108,
+    "combination": "5108",
     "timeSpan": 83.36249269999999,
     "dateTime": "2023-11-05T15:36:23.9399832+10:00"
   },
   {
     "attempts": 10,
-    "combination": 2849,
+    "combination": "2849",
     "timeSpan": 369.90969389999998,
     "dateTime": "2023-11-05T15:46:47.5816074+10:00"
   },
   {
     "attempts": 15,
-    "combination": 2790,
+    "combination": "2790",
     "timeSpan": 331.35529779999996,
     "dateTime": "2023-11-05T15:52:24.8819655+10:00"
   },
   {
     "attempts": 7,
-    "combination": 6438,
+    "combination": "6438",
     "timeSpan": 193.9379543,
     "dateTime": "2023-11-05T16:00:48.1131449+10:00"
   },
   {
     "attempts": 5,
-    "combination": 1964,
+    "combination": "1964",
     "timeSpan": 176.1624329,
     "dateTime": "2023-11-05T16:04:12.3932136+10:00"
+  },
+  {
+    "attempts": 4,
+    "combination": "4561",
+    "timeSpan": 21.6123203,
+    "dateTime": "2023-11-11T00:09:24.6280266+10:00"
+  },
+  {
+    "attempts": 8,
+    "combination": "7062",
+    "timeSpan": 93.489143799999994,
+    "dateTime": "2023-11-11T00:17:33.6038124+10:00"
+  },
+  {
+    "attempts": 9,
+    "combination": "7480",
+    "timeSpan": 60.273637000000001,
+    "dateTime": "2023-11-18T15:58:36.2511957+10:00"
+  },
+  {
+    "attempts": 7,
+    "combination": "0395",
+    "timeSpan": 79.770607099999992,
+    "dateTime": "2023-11-19T21:02:36.0413192+10:00"
+  },
+  {
+    "attempts": 5,
+    "combination": "1928",
+    "timeSpan": 53.0678567,
+    "dateTime": "2023-11-19T22:19:33.9403188+10:00"
+  },
+  {
+    "attempts": 7,
+    "combination": "3489",
+    "timeSpan": 59.916606799999997,
+    "dateTime": "2023-11-21T21:19:18.8231716+10:00"
   }
 ]

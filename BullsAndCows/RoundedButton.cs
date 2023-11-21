@@ -166,6 +166,7 @@ namespace BullsAndCows
                 TextColor = Color.FromArgb(141, 141, 141);
                 borderColor = Color.FromArgb(141, 141, 141);
             }
+            this.Invalidate();
             base.OnEnabledChanged(e);
         }
     }
